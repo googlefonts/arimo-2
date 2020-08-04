@@ -50,6 +50,7 @@ jobs:
         git push
 
   check:
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
@@ -87,8 +88,8 @@ jobs:
         version: "latest"  # optional, latest PyPI release is default
 
   validate:
+    needs: [check]
     runs-on: ubuntu-latest
-    needs: check
     steps:
     - name: Pull main repository
       uses: actions/checkout@v2
