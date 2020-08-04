@@ -95,10 +95,10 @@ jobs:
       with:
         path : "main"
     - name: copy validate fonts
-    run: |
-      mkdir /main/fonts/achives/released_fonts
-      cd /main/fonts
-      cp -R * /main/fonts/achives/released_fonts
+      run: |
+        mkdir /main/fonts/achives/released_fonts
+        cd /main/fonts
+        cp -R * /main/fonts/achives/released_fonts
     - name: Commit and Push
       run: |
         cd "$GITHUB_WORKSPACE"/main
